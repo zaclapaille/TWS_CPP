@@ -3,7 +3,7 @@
 // Copyright (C) 2022 KMS
 // License   http ://www.apache.org/licenses/LICENSE-2.0
 // Product   TWS - CPP
-// File      THREA/THREA.cpp
+// File      Hello/Hello.cpp
 
 // ===== C ==================================================================
 #include <stdio.h>
