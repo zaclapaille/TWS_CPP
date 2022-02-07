@@ -29,7 +29,7 @@ double Form_Rectangle::GetArea() const
     return mBase_mm * mSide_mm;
 }
 
-double Form_Rectangle::GetDiameter() const
+double Form_Rectangle::GetPerimeter() const
 {
     return 2 * mBase_mm + 2 * mSide_mm;
 }
@@ -45,8 +45,8 @@ const char* Form_Rectangle::GetInfoName(unsigned int aIndex) const
 
     switch (aIndex)
     {
-    case 0: lResult = "la base"; break;
-    case 1: lResult = "le cote"; break;
+    case 0: lResult = "la base en mm"; break;
+    case 1: lResult = "le cote en mm"; break;
 
     default: assert(false);
     }

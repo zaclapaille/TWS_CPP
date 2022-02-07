@@ -22,7 +22,7 @@ public:
     virtual ~Form_Rectangle();
 
     virtual double GetArea() const;
-    virtual double GetDiameter() const;
+    virtual double GetPerimeter() const;
 
     virtual unsigned int GetInfoCount() const;
     virtual const char * GetInfoName(unsigned int aIndex) const;

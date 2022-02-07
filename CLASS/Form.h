@@ -14,8 +14,8 @@ public:
 
     virtual ~Form();
 
-    virtual double GetArea    () const = 0;
-    virtual double GetDiameter() const = 0;
+    virtual double GetArea     () const = 0;
+    virtual double GetPerimeter() const = 0;
 
     virtual unsigned int GetInfoCount() const = 0;
     virtual const char * GetInfoName (unsigned int aIndex) const = 0;

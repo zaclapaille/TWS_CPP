@@ -1,7 +1,7 @@
 
 // Author    KMS - Martin Dubois, P. Eng.
 // Copyright (C) 2022 KMS
-// License   http ://www.apache.org/licenses/LICENSE-2.0
+// License   http://www.apache.org/licenses/LICENSE-2.0
 // Product   TWS - CPP
 // File      CLASS/CLASS.cpp
 
@@ -64,7 +64,7 @@ int main(int aCount, const char** aVector)
     unsigned int lCount = lForm->GetInfoCount();
     for (unsigned int i = 0; i < lCount; i++)
     {
-        std::cout << "Entrez " << lForm->GetInfoName(i) << " en mm\n";
+        std::cout << "Entrez " << lForm->GetInfoName(i) << "\n";
 
         // COMMENTAIRE PEDAGOGIQUE - Bonne pratique
         // Le "mm" a la fin du nom de variable "lValue_mm" represente l'unite
@@ -78,8 +78,8 @@ int main(int aCount, const char** aVector)
         lForm->SetInfo(i, lValue_mm);
     }
 
-    std::cout << "L'aire de la forme est de "      << lForm->GetArea    () << " mm carree\n";
-    std::cout << "Le diametre de la forme est de " << lForm->GetDiameter() << " mm\n";
+    std::cout << "L'aire de la forme est de "       << lForm->GetArea     () << " mm carree\n";
+    std::cout << "Le perimetre de la forme est de " << lForm->GetPerimeter() << " mm\n";
 
     delete lForm;
 
