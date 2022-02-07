@@ -142,10 +142,14 @@
     <ClCompile Include="CLASS.cpp" />
     <ClCompile Include="Form.cpp" />
     <ClCompile Include="Form_Rectangle.cpp" />
+    <ClCompile Include="Form_Carre.cpp" />
+    <ClCompile Include="Form_Cercle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form.h" />
     <ClInclude Include="Form_Rectangle.h" />
+    <ClInclude Include="Form_Carre.h" />
+    <ClInclude Include="Form_Cercle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,6 +17,8 @@
 
 // ===== CLASS ==============================================================
 #include "Form_Rectangle.h"
+#include "Form_Carre.h"
+#include "Form_Cercle.h"
 
 // Static function declarations
 // //////////////////////////////////////////////////////////////////////////
@@ -79,7 +81,7 @@ int main(int aCount, const char** aVector)
     }
 
     std::cout << "L'aire de la forme est de "      << lForm->GetArea    () << " mm carree\n";
-    std::cout << "Le diametre de la forme est de " << lForm->GetDiameter() << " mm\n";
+    std::cout << "Le perimetre de la forme est de " << lForm->GetDiameter() << " mm\n";
 
     delete lForm;
 
@@ -107,6 +109,8 @@ Form* CreateForm(const char* aName)
     Form* lResult = NULL;
 
     if (0 == _stricmp("Rectangle", aName)) { lResult = new Form_Rectangle(); }
+    if (0 == _stricmp("Carre", aName)) { lResult = new Form_Carre(); }
+    if (0 == _stricmp("Cercle", aName)) { lResult = new Form_Cercle(); }
 
     return lResult;
 }
