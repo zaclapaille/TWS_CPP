@@ -27,7 +27,7 @@ int main()
             assert(lRet);
             assert(1 == lCount);
 
-            if (KEY_EVENT == lRecord.EventType)
+            if (KEY_EVENT == lRecord.Event.KeyEvent.bKeyDown)
             {
                 lRocket.Command(lRecord.Event.KeyEvent.uChar.AsciiChar);
             }
@@ -35,13 +35,13 @@ int main()
 
         lRocket.Simulate();
 
-        // TODO std::cout << lRocket;
-        printf("Altitude: %4.1f m - Speed: %3.1f m/s - Power: %3.1f %% - Fuel: %3.1f l - %s  \r",
+            std::cout << lRocket << "\r";
+       /* printf("Altitude: %4.1f m - Speed: %3.1f m/s - Power: %3.1f %% - Fuel: %3.1f l - %s  \r",
             lRocket.GetAltitude(),
             lRocket.GetSpeed(),
             lRocket.mMotor.GetPower() * 100.0,
             lRocket.mTank.GetLevel(),
-            lRocket.mAutoPilote.IsEnabled() ? "Auto" : "Manual");
+            lRocket.mAutoPilote.IsEnabled() ? "Auto" : "Manual");*/
     }
 
     double lFinalSpeed_m_s = lRocket.GetSpeed();

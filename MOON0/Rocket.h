@@ -43,7 +43,7 @@ private:
     uint64_t mTime_100ns;
 
 };
-
+std::ostream& operator << (std::ostream& aOut, const Rocket& aRocket);
 // TODO
 // Declarer l'operateur permettant d'afficher les informations en utilisant
 // la class ostream.

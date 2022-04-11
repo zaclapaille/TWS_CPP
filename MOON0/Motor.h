@@ -17,9 +17,9 @@ public:
 
     Motor();
 
-    // TODO
-    // Declarer les operateurs -- et ++. Ils changent la puissance par
-    // increment de 0.1.
+
+    void operator ++ (int);
+    void operator -- (int);
 
     double GetAcceleration(double aDelta_s);
 
@@ -27,7 +27,6 @@ public:
 
     void FullPower();
     void HalfPower();
-
     void Off();
 
     void SetTank(Tank * aTank);
@@ -40,6 +39,5 @@ private:
 
 };
 
-// TODO
-// Declarer l'operateur permettant d'afficher le niveau de carburant en
-// utilisant la class ostream.
+std::ostream & operator << (std::ostream& aOut, const Motor& aMotor);
+

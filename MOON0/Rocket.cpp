@@ -9,6 +9,7 @@
 
 // ===== MOON0 ==============================================================
 #include "Rocket.h"
+#include <iomanip>
 
 // Constants
 // //////////////////////////////////////////////////////////////////////////
@@ -30,8 +31,8 @@ Rocket::Rocket() : mAltitude_m(INITIAL_ALTITUDE_m), mPause(true), mSpeed_m_s(INI
 }
 
 // Les commandes !
-// -    Diminue la puissance de 0.1
-// +    Augmente la puissance de 0.1
+// -    Diminue la puissance de 0.02
+// +    Augmente la puissance de 0.02
 // *    Augmente la puissance a 1.0
 // /    Place la puissance a 0.5
 // 0    Diminue la puissance a 0
@@ -43,8 +44,8 @@ void Rocket::Command(char aLetter)
 {
     switch (aLetter)
     {
-    case '-': break; // TODO mMotor--;
-    case '+': break; // TODO mMotor++;
+    case '-': mMotor--; break;
+    case '+': mMotor++; break;
     case '*': mMotor.FullPower(); break;
     case '/': mMotor.HalfPower(); break;
 
@@ -101,4 +102,16 @@ void Rocket::Resume()
     GetSystemTimeAsFileTime(reinterpret_cast<FILETIME*>(&mTime_100ns));
 
     mPause = false;
+}
+
+std::ostream& operator<<(std::ostream& aOut, const Rocket& aRocket)
+{
+    aOut << std::fixed << std::setprecision(1);
+    aOut << "Altitude: " << aRocket.GetAltitude() << " m - ";
+    aOut << "Speed: " << aRocket.GetSpeed() << " m/s - ";
+    aOut << aRocket.mMotor;
+    aOut << aRocket.mTank;
+    aOut << aRocket.mAutoPilote;
+
+    return aOut;
 }

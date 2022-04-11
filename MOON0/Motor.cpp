@@ -33,6 +33,8 @@ Motor::Motor() : mPower(0.0), mTank(NULL)
 {
 }
 
+
+
 double Motor::GetAcceleration(double aDelta_s)
 {
     assert(0.0 < aDelta_s);
@@ -54,5 +56,30 @@ double Motor::GetPower() const { return mPower; }
 void Motor::FullPower() { mPower = 1.0; }
 void Motor::HalfPower() { mPower = 0.5; }
 void Motor::Off      () { mPower = 0.0; }
+void Motor::operator++(int)
+{
+    if(mPower >= 1)
+    {
+        mPower = 1; 
+    }
+    else
+    {
+        mPower += 0.02;
+    }
+
+}
+
+void Motor::operator--(int)
+{
+    if (mPower > 0)
+        mPower -= 0.02; 
+}
 
 void Motor::SetTank(Tank* aTank) { mTank = aTank; }
+
+std::ostream& operator<<(std::ostream& aOut, const Motor& aMotor)
+{
+    aOut <<"Power: " << aMotor.GetPower() * 100.0  << " % - ";
+
+    return aOut;
+}

@@ -23,7 +23,5 @@ private:
     double mLevel_l;
 
 };
+std::ostream& operator << (std::ostream& aOut, const Tank& aTank);
 
-// TODO
-// Declarer l'operateur permettant d'afficher la puissance en utilisant la
-// class ostream.

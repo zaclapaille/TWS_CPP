@@ -38,7 +38,5 @@ private:
     Tank * mTank;
 
 };
+std::ostream& operator << (std::ostream& aOut, const AutoPilote& aAutoPilote);
 
-// TODO
-// Declarer l'operateur permettant d'afficher l'etat en utilisant la classe
-// ostream.
