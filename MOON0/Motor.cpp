@@ -62,7 +62,7 @@ void Motor::operator++(int)
     {
         mPower = 1; 
     }
-    else
+    if(mPower <= 0.98)
     {
         mPower += 0.02;
     }

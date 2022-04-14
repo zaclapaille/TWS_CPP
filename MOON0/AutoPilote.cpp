@@ -10,6 +10,7 @@
 // ===== MOON0 ==============================================================
 #include "AutoPilote.h"
 #include "Motor.h"
+#include <math.h>
 
 // Public
 // //////////////////////////////////////////////////////////////////////////
@@ -32,13 +33,14 @@ void AutoPilote::Simulate(double aAltitude_m, double aSpeed_m_s)
 
     if (mEnable)
     {
-        /*double targetSpeed = (-1)*aAltitude_m;
+        
+        double targetSpeed = sqrt(aAltitude_m) * -1;
         if (targetSpeed >= aSpeed_m_s) {
-            mMotor++;
+            (*mMotor)++;
         }
         if (targetSpeed <= aSpeed_m_s) {
-            mMotor--;
-        }*/
+            (*mMotor)--;
+        }
     }
 }
 std::ostream& operator<<(std::ostream& aOut, const AutoPilote& aAutoPilote)
